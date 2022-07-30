@@ -358,8 +358,4 @@ uint32_t bytes_to_int32(uint8_t* bytes, bool bigendian);
 
 #ifdef __cplusplus
 }
-<<<<<<< HEAD
 #endif
-=======
-#endif
->>>>>>> de5093bfa161400cd2f35b8bca8d04e73388cb5c
