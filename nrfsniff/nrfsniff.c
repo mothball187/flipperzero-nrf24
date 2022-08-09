@@ -326,7 +326,6 @@ int32_t nrfsniff_app(void* p) {
     gui_add_view_port(gui, view_port, GuiLayerFullscreen);
 
     NotificationApp* notification = furi_record_open(RECORD_NOTIFICATION);
-    furi_hal_power_suppress_charge_enter();
 
     Storage* storage = furi_record_open(RECORD_STORAGE);
     storage_common_mkdir(storage, NRFSNIFF_APP_PATH_FOLDER);
@@ -422,7 +421,6 @@ int32_t nrfsniff_app(void* p) {
     furi_hal_spi_release(nrf24_HANDLE);
     view_port_enabled_set(view_port, false);
     gui_remove_view_port(gui, view_port);
-    furi_hal_power_suppress_charge_exit();
     furi_record_close(RECORD_GUI);
     furi_record_close(RECORD_NOTIFICATION);
     furi_record_close(RECORD_STORAGE);
